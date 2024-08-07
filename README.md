@@ -61,7 +61,7 @@ bun dev
 ```
 
 - 安装aws-sdk
-`yarn add aws-sdk`
+  `yarn add aws-sdk`
 - react-query
 - axios
 - react-hot-toast
@@ -80,4 +80,4 @@ bun dev
 
 # 8. Chat Component (Vercel AI Chat)
 
-
+# 9. Stripe
