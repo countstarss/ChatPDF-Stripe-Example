@@ -764,9 +764,8 @@ export async function POST(req: Request) {
   - 3. stripe listen --forward-to localhost:3000/api/webhook (本地运行的地址)
 
     - 完成这步之后，会得到一个[webhook signing secret]
-  - 4. 添加端点：端点监听的事件是 "checkout.session.completed" & "invoice.payment_succeeded"
-  - 5. [Enable test portal](https://dashboard.stripe.com/test/settings/billing/portal)
-  - 6. 再次提交订单，应该会成功，再次点击，会进入到订阅管理界面
+  - 4. [Enable test portal](https://dashboard.stripe.com/test/settings/billing/portal)
+  - 5. 再次提交订单，应该会成功，再次点击，会进入到订阅管理界面
 
 ## 9. Deploy
 
@@ -774,3 +773,4 @@ export async function POST(req: Request) {
 - 到vercel部署
   - 粘贴所有的环境变量，除了STRIPE_BASE_URL，因为这个是要作为动作完成之后的return_url
   - 需要在部署完成之后，把部署后的域名作为环境变量，然后重新部署应用
+  - 添加Stripe端点：端点监听的事件是 "checkout.session.completed" & "invoice.payment_succeeded",然后会得到一个新的sining secret，将其替代原来的STRIPE_WEBHOOK_SIGNING_SECRET
